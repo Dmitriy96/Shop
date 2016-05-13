@@ -2,7 +2,11 @@ package by.bsuir.shop.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -84,9 +88,12 @@ public class Laptop {
     @NotNull
     @Column
     private Integer USB3_0Count;
+    @DecimalMin("1")
+    @Column
+    private Double cost;
+    @Column(columnDefinition = "BIT")
+    private boolean available;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private LaptopInStock inStock;
 
     public Laptop() {}
 
@@ -290,12 +297,20 @@ public class Laptop {
         this.USB3_0Count = USB3_0Count;
     }
 
-    public LaptopInStock getInStock() {
-        return inStock;
+    public Double getCost() {
+        return cost;
     }
 
-    public void setInStock(LaptopInStock inStock) {
-        this.inStock = inStock;
+    public void setCost(Double cost) {
+        this.cost = cost;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     @Override
@@ -305,6 +320,7 @@ public class Laptop {
 
         Laptop laptop = (Laptop) o;
 
+        if (available != laptop.available) return false;
         if (!idLaptop.equals(laptop.idLaptop)) return false;
         if (!brandName.equals(laptop.brandName)) return false;
         if (!series.equals(laptop.series)) return false;
@@ -330,13 +346,13 @@ public class Laptop {
         if (!hardDriveRotationalSpeed.equals(laptop.hardDriveRotationalSpeed)) return false;
         if (!USB2_0Count.equals(laptop.USB2_0Count)) return false;
         if (!USB3_0Count.equals(laptop.USB3_0Count)) return false;
-        return inStock.equals(laptop.inStock);
+        return cost.equals(laptop.cost);
 
     }
 
     @Override
     public int hashCode() {
-        int result = idLaptop.hashCode();
+        int result = 1;
         result = 31 * result + brandName.hashCode();
         result = 31 * result + series.hashCode();
         result = 31 * result + modelNumber.hashCode();
@@ -361,7 +377,8 @@ public class Laptop {
         result = 31 * result + hardDriveRotationalSpeed.hashCode();
         result = 31 * result + USB2_0Count.hashCode();
         result = 31 * result + USB3_0Count.hashCode();
-        result = 31 * result + inStock.hashCode();
+        result = 31 * result + cost.hashCode();
+        result = 31 * result + (available ? 1 : 0);
         return result;
     }
 
@@ -393,7 +410,8 @@ public class Laptop {
                 ", hardDriveRotationalSpeed=" + hardDriveRotationalSpeed +
                 ", USB2_0Count=" + USB2_0Count +
                 ", USB3_0Count=" + USB3_0Count +
-                ", inStock=" + inStock +
+                ", cost=" + cost +
+                ", available=" + available +
                 '}';
     }
 }

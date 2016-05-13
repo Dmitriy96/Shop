@@ -48,6 +48,11 @@ public class LaptopServiceImpl implements LaptopService
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
+    public void updateLaptop(Laptop laptop) {
+        laptopDao.updateLaptop(laptop);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
     public void deleteLaptop(Laptop laptop) {
         laptopDao.deleteLaptop(laptop);
     }

@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -26,11 +27,16 @@
                 <h1>${laptop.brandName} ${laptop.series} ${laptop.modelNumber}</h1>
             </div>
             <sec:authorize access="hasAnyRole('ROLE_USER')">
-                <div class="col-md-3 control-buttons-alignment">
-                    <button type="button" class="btn btn-primary" title="Назад">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add to basket
-                    </button>
-                </div>
+                <c:if test="${laptop.available}">
+                    <c:url value='/user/basket/add/${laptop.idLaptop}' var="addToBasketUrl"/>
+                    <form:form id="form" action="${addToBasketUrl}" method="post">
+                        <div class="col-md-3 control-buttons-alignment">
+                            <button type="submit" id="addToBasket" class="btn btn-primary" title="addToBasket">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add to basket
+                            </button>
+                        </div>
+                    </form:form>
+                </c:if>
             </sec:authorize>
         </div>
 
@@ -74,7 +80,7 @@
                     </li>
                     <li class="text-block">
                         <h3>Screen size</h3>
-                        <p><c:out value="${laptop.screenSize}"/></p>
+                        <p><c:out value="${laptop.screenSize}'"/></p>
                     </li>
                 </ul>
             </div>
@@ -101,11 +107,11 @@
                     </li>
                     <li class="text-block">
                         <h3>USB 2.0 parts number</h3>
-                        <p><c:out value="${laptop.USB2_0Count} Turns/min"/></p>
+                        <p><c:out value="${laptop.USB2_0Count}"/></p>
                     </li>
                     <li class="text-block">
                         <h3>USB 3.0 parts number</h3>
-                        <p><c:out value="${laptop.USB3_0Count} Turns/min"/></p>
+                        <p><c:out value="${laptop.USB3_0Count}"/></p>
                     </li>
                 </ul>
             </div>
@@ -121,7 +127,7 @@
                     </li>
                     <li class="text-block">
                         <h3>Weight</h3>
-                        <p><c:out value="${laptop.weight}"/></p>
+                        <p><c:out value="${laptop.weight} Kg"/></p>
                     </li>
                     <li class="text-block">
                         <h3>Screen Resolution</h3>

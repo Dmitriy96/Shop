@@ -1,5 +1,6 @@
 package by.bsuir.shop.controller;
 
+import by.bsuir.shop.model.Role;
 import by.bsuir.shop.model.User;
 import by.bsuir.shop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 
 @Controller
@@ -37,7 +40,6 @@ public class SignupController
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registrationPage(Model model, Principal principal) {
         model.addAttribute(new User());
-        model.addAttribute("rolesMap", getRolesMap());
         return "registration";
     }
 
@@ -47,7 +49,6 @@ public class SignupController
                                Model model, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             model.addAttribute(new User());
-            model.addAttribute("rolesMap", getRolesMap());
             model.addAttribute("error", bindingResult.getFieldError().getField() + " field error.");
             return "registration";
         }
@@ -55,7 +56,6 @@ public class SignupController
         if (verifyingUser != null) {
             model.addAttribute((new User()));
             model.addAttribute("usernameExists", "User with this username already exists");
-            model.addAttribute("rolesMap", getRolesMap());
             return "registration";
         }
         else {
@@ -63,22 +63,17 @@ public class SignupController
             if (verifyingUser != null) {
                 model.addAttribute((new User()));
                 model.addAttribute("emailExists", "User with this username already exists");
-                model.addAttribute("rolesMap", getRolesMap());
                 return "registration";
             }
         }
         user.setAvailable(true);
+        Role userRole = userService.getUserRole();
+        Set<Role> roleSet = new HashSet<Role>();
+        roleSet.add(userRole);
+        user.setUserRoles(roleSet);
         userService.saveUser(user);
         authenticateUserAndSetSession(user, request);
         return "redirect:/home";
-    }
-
-
-    private Map<String, String> getRolesMap()
-    {
-        Map<String, String> rolesMap = new HashMap<String, String>();
-        rolesMap.put("ROLE_USER", "User");
-        return rolesMap;
     }
 
     private void authenticateUserAndSetSession(User user, HttpServletRequest request)

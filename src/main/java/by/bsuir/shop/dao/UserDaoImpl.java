@@ -1,5 +1,7 @@
 package by.bsuir.shop.dao;
 
+import by.bsuir.shop.model.PlacedOrder;
+import by.bsuir.shop.model.Role;
 import by.bsuir.shop.model.User;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
@@ -27,7 +29,14 @@ public class UserDaoImpl implements UserDao {
         Query query = session.createQuery(sb.toString());
         query.setParameter("username", username);
         User user = (User) query.uniqueResult();
-        Hibernate.initialize(user.getUserRoles());
+        if (user != null) {
+            Hibernate.initialize(user.getUserRoles());
+            Hibernate.initialize(user.getLaptopList());
+            Hibernate.initialize(user.getPlacedOrders());
+            for (PlacedOrder placedOrder : user.getPlacedOrders()) {
+                Hibernate.initialize(placedOrder.getLaptopList());
+            }
+        }
         session.close();
         return user;
 	}
@@ -38,7 +47,8 @@ public class UserDaoImpl implements UserDao {
         Query query = session.createQuery(sb.toString());
         query.setParameter("email", email);
         User user = (User) query.uniqueResult();
-        Hibernate.initialize(user.getUserRoles());
+        if (user != null)
+            Hibernate.initialize(user.getUserRoles());
         session.close();
         return user;
     }
@@ -51,10 +61,27 @@ public class UserDaoImpl implements UserDao {
         return id;
     }
 
+    public void updateUser(User user) {
+        Session session = getSessionFactory().openSession();
+        session.merge(user);
+        session.flush();
+        session.close();
+    }
+
     public void deleteUser(User user) {
         Session session = getSessionFactory().openSession();
         session.update(user);
         session.close();
+    }
+
+    public Role getUserRole() {
+        Session session = getSessionFactory().openSession();
+        StringBuilder sb = new StringBuilder("SELECT r FROM Role r WHERE r.role = :role");
+        Query query = session.createQuery(sb.toString());
+        query.setParameter("role", "ROLE_USER");
+        Role user = (Role) query.uniqueResult();
+        session.close();
+        return user;
     }
 
 	public SessionFactory getSessionFactory() {

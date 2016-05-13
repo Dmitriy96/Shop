@@ -1,11 +1,15 @@
 package by.bsuir.shop.service;
 
 import by.bsuir.shop.dao.UserDao;
+import by.bsuir.shop.model.PlacedOrder;
+import by.bsuir.shop.model.Role;
 import by.bsuir.shop.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 
 
 @Service
@@ -15,9 +19,9 @@ public class UserServiceImpl implements UserService
     UserDao userDao;
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
-    public User getUserByUsername(String username)
-    {
-        return userDao.getUserByUsername(username);
+    public User getUserByUsername(String username) {
+        User user = userDao.getUserByUsername(username);
+        return user;
     }
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
@@ -32,8 +36,18 @@ public class UserServiceImpl implements UserService
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
     public void deleteUser(User user) {
         user.setAvailable(false);
         userDao.deleteUser(user);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public Role getUserRole() {
+        return userDao.getUserRole();
     }
 }

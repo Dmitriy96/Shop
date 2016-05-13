@@ -60,7 +60,8 @@ public class AdminController {
             return "admin/deleteProduct";
         }
         Laptop laptop = laptopService.getLaptop(id);
-        laptopService.deleteLaptop(laptop);
+        laptop.setAvailable(false);
+        laptopService.updateLaptop(laptop);
         return "redirect:/admin/product/delete";
     }
 

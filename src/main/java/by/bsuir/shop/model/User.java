@@ -27,11 +27,10 @@ public class User
     @NotBlank
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private List<PlacedOrder> placedOrders;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ShoppingBasket_Laptop")
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Laptop> laptopList;
 
     @Column
@@ -41,9 +40,13 @@ public class User
     @Column(columnDefinition = "BIT")
     private boolean available;
 
-    @ElementCollection
-    @CollectionTable(name ="Roles")
-    private Set<String> userRoles;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name="user_role",
+            joinColumns =
+                    {@JoinColumn(name="user_id")},
+            inverseJoinColumns =
+                    {@JoinColumn(name="role_id")})
+    private Set<Role> userRoles;
 
     public User() {}
 
@@ -79,7 +82,7 @@ public class User
         return email;
     }
 
-    public void setPlacedOrders(List<PlacedOrder> messages) {
+    public void setPlacedOrders(List<PlacedOrder> placedOrders) {
         this.placedOrders = placedOrders;
     }
 
@@ -103,11 +106,11 @@ public class User
         this.available = enabled;
     }
 
-    public Set<String> getUserRoles() {
+    public Set<Role> getUserRoles() {
         return userRoles;
     }
 
-    public void setUserRoles(Set<String> userRoles) {
+    public void setUserRoles(Set<Role> userRoles) {
         this.userRoles = userRoles;
     }
 
@@ -131,14 +134,11 @@ public class User
 
     @Override
     public int hashCode() {
-        int result = idUser.hashCode();
+        int result = 1;
         result = 31 * result + username.hashCode();
         result = 31 * result + password.hashCode();
-        result = 31 * result + placedOrders.hashCode();
-        result = 31 * result + laptopList.hashCode();
         result = 31 * result + email.hashCode();
         result = 31 * result + (available ? 1 : 0);
-        result = 31 * result + userRoles.hashCode();
         return result;
     }
 

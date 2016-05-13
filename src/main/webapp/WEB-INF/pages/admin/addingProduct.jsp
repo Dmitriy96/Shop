@@ -188,8 +188,8 @@
                 <div class="form-group row">
                     <label for="cost" class="col-sm-3 col-md-3 control-label">Cost, $</label>
                     <div class="col-sm-6 col-md-6">
-                        <form:input id="cost" type="text" cssClass="form-control" path="inStock.cost" />
-                        <form:errors path="inStock.cost" cssClass="control-label errorMessage" />
+                        <form:input id="cost" type="text" cssClass="form-control" path="cost" />
+                        <form:errors path="cost" cssClass="control-label errorMessage" />
                     </div>
                 </div>
                 <div class="form-group">

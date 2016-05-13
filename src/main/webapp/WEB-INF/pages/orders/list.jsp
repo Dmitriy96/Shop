@@ -15,26 +15,55 @@
             <div class="container">
                 <h2>Orders of ${user.username}</h2>
                 <div class="table-responsive">
+                <c:if test="${not empty placedOrderList}">
                     <table id="ordersTable" class="table table-hover">
-                        <tbody>
-                        <c:forEach items="${placedOrderList}" var="order">
+                        <thead>
                             <tr>
                                 <td>
-                                    <div class="cell-text-alignment">{laptop.brandName} ${laptop.series} ${laptop.modelNumber}</div>
+                                    <div class="cell-text-alignment">Ordering Date</div>
                                 </td>
                                 <td>
-                                    <div class="cell-text-alignment">${laptop.operatingSystem}</div>
+                                    <div class="cell-text-alignment">Laptop Name</div>
                                 </td>
                                 <td>
-                                    <div class="cell-text-alignment">${laptop.inStock.cost} $</div>
+                                    <div class="cell-text-alignment">Laptop OS</div>
+                                </td>
+                                <td>
+                                    <div class="cell-text-alignment">Laptop cost, $</div>
                                 </td>
                             </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${placedOrderList}" var="order">
+                            <c:forEach items="${order.laptopList}" var="laptop">
+                                <tr>
+                                    <td>
+                                        <div class="cell-text-alignment">${order.orderingDate}</div>
+                                    </td>
+                                    <td>
+                                        <div class="cell-text-alignment">
+                                            <a href="${pageContext.request.contextPath}/laptop/${laptop.idLaptop}">
+                                                ${laptop.brandName} ${laptop.series} ${laptop.modelNumber}
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cell-text-alignment">${laptop.operatingSystem}</div>
+                                    </td>
+                                    <td>
+                                        <div class="cell-text-alignment">${laptop.cost}</div>
+                                    </td>
+                                </tr>
+                            </c:forEach>
                         </c:forEach>
                         </tbody>
                     </table>
-                    <div id="emptyOrders" class="well well-lg text-center hidden">
+                </c:if>
+                <c:if test="${empty placedOrderList}">
+                    <div id="emptyOrders" class="well well-lg text-center">
                         You haven't got orders.
                     </div>
+                </c:if>
                 </div>
             </div>
         </div>

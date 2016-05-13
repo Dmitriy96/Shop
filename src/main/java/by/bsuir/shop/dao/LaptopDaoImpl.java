@@ -1,13 +1,13 @@
 package by.bsuir.shop.dao;
 
 import by.bsuir.shop.model.Laptop;
+import by.bsuir.shop.model.User;
 import by.bsuir.shop.util.LaptopSample;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,9 +20,11 @@ public class LaptopDaoImpl implements LaptopDao {
     @Override
     public List<Laptop> getAllLaptops() {
         Session session = getSessionFactory().openSession();
-        List<Laptop> laptops = session.createCriteria(Laptop.class).list();
+        StringBuilder sb = new StringBuilder("SELECT l FROM Laptop l WHERE l.available is true");
+        Query query = session.createQuery(sb.toString());
+        List<Laptop> laptopList = query.list();
         session.close();
-        return laptops;
+        return laptopList;
     }
 
     @Override
@@ -31,17 +33,23 @@ public class LaptopDaoImpl implements LaptopDao {
         Criteria criteria = session.createCriteria(Laptop.class);
         criteria.add(laptopSample.buildHibernateCriterion());
         List<Laptop> laptops = criteria.list();
+        List<Laptop> availableLaptops = new ArrayList<Laptop>();
+        for (Laptop laptop : laptops) {
+            if (laptop.isAvailable())
+                availableLaptops.add(laptop);
+        }
         session.close();
-        return laptops;
+        return availableLaptops;
     }
 
     @Override
     public Integer getLaptopCount() {
         Session session = getSessionFactory().openSession();
-        Criteria criteria = session.createCriteria(Laptop.class);
-        Integer size = criteria.list().size();
+        StringBuilder sb = new StringBuilder("SELECT l FROM Laptop l WHERE l.available is true");
+        Query query = session.createQuery(sb.toString());
+        List<Laptop> laptopList = query.list();
         session.close();
-        return size;
+        return laptopList.size();
     }
 
     @Override
@@ -49,8 +57,13 @@ public class LaptopDaoImpl implements LaptopDao {
         Session session = getSessionFactory().openSession();
         Criteria criteria = session.createCriteria(Laptop.class);
         List<Laptop> laptops = criteria.setFirstResult(LAPTOPS_PER_PAGE * offset).setMaxResults(LAPTOPS_PER_PAGE).list();
+        List<Laptop> availableLaptops = new ArrayList<Laptop>();
+        for (Laptop laptop : laptops) {
+            if (laptop.isAvailable())
+                availableLaptops.add(laptop);
+        }
         session.close();
-        return laptops;
+        return availableLaptops;
     }
 
     @Override
@@ -58,17 +71,25 @@ public class LaptopDaoImpl implements LaptopDao {
         Session session = getSessionFactory().openSession();
         Laptop laptop = (Laptop)getSessionFactory().openSession().get(Laptop.class, id);
         session.close();
-        return laptop;
+        return laptop.isAvailable() ? laptop : null;
     }
 
     @Override
     public Object saveLaptop(Laptop laptop) {
         Session session = getSessionFactory().openSession();
-        laptop.getInStock().setAvailable(true);
-        Laptop id = (Laptop) session.save(laptop);
+        laptop.setAvailable(true);
+        Long id = (Long) session.save(laptop);
         session.flush();
         session.close();
         return id;
+    }
+
+    @Override
+    public void updateLaptop(Laptop laptop) {
+        Session session = getSessionFactory().openSession();
+        session.merge(laptop);
+        session.flush();
+        session.close();
     }
 
     @Override

@@ -151,6 +151,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="memorySize" class="col-sm-3 col-md-3 control-label">Memory Size</label>
+                    <div class="col-sm-6 col-md-6">
+                        <form:input id="memorySize" type="text" cssClass="form-control" path="memorySize"/>
+                        <form:errors path="memorySize" cssClass="control-label errorMessage" />
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="hardDriveCapacity" class="col-sm-3 col-md-3 control-label">Hard Drive Capacity</label>
                     <div class="col-sm-6 col-md-6">
                         <form:input id="hardDriveCapacity" type="text" cssClass="form-control" path="hardDriveCapacity" />
@@ -181,8 +188,8 @@
                 <div class="form-group row">
                     <label for="cost" class="col-sm-3 col-md-3 control-label">Cost, $</label>
                     <div class="col-sm-6 col-md-6">
-                        <form:input id="cost" type="text" cssClass="form-control" path="inStock.cost" />
-                        <form:errors path="inStock.cost" cssClass="control-label errorMessage" />
+                        <form:input id="cost" type="text" cssClass="form-control" path="cost" />
+                        <form:errors path="cost" cssClass="control-label errorMessage" />
                     </div>
                 </div>
                 <div class="form-group">

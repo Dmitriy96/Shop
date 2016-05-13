@@ -9,8 +9,8 @@ import java.util.List;
 
 
 @Entity
-public class PlacedOrder
-{
+public class PlacedOrder {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
@@ -22,8 +22,11 @@ public class PlacedOrder
     private Date orderingDate;
 
     @NotEmpty
-    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Laptop> laptopList;
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    private User user;
 
     public PlacedOrder() {}
 
@@ -51,6 +54,14 @@ public class PlacedOrder
         this.laptopList = laptopList;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,7 +71,8 @@ public class PlacedOrder
 
         if (idOrder != that.idOrder) return false;
         if (!orderingDate.equals(that.orderingDate)) return false;
-        return laptopList.equals(that.laptopList);
+        if (!laptopList.equals(that.laptopList)) return false;
+        return user.equals(that.user);
 
     }
 
@@ -78,6 +90,7 @@ public class PlacedOrder
                 "idOrder=" + idOrder +
                 ", orderingDate=" + orderingDate +
                 ", laptopList=" + laptopList +
+                ", user=" + user +
                 '}';
     }
 }

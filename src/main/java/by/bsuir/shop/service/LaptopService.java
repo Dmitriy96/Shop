@@ -13,5 +13,6 @@ public interface LaptopService {
     List<Laptop> getLaptops(Integer offset);
     Laptop getLaptop(Long id);
     Object saveLaptop(Laptop laptop);
+    void updateLaptop(Laptop laptop);
     void deleteLaptop(Laptop laptop);
 }

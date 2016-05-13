@@ -1,6 +1,7 @@
 package by.bsuir.shop.service;
 
 import by.bsuir.shop.dao.UserDao;
+import by.bsuir.shop.model.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,11 @@ public class MyUserDetailsService implements UserDetailsService {
     @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
         by.bsuir.shop.model.User user = userDao.getUserByUsername(username);
-		Set<GrantedAuthority> authorities = buildUserAuthority(user.getUserRoles());
+		Set<String> roles = new HashSet<String>();
+        for (Role role : user.getUserRoles()) {
+            roles.add(role.getRole());
+        }
+		Set<GrantedAuthority> authorities = buildUserAuthority(roles);
 		return new User(user.getUsername(), user.getPassword(), user.isAvailable(), true, true, true, authorities);
 	}
 

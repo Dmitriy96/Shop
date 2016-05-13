@@ -73,16 +73,6 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <label class="col-sm-3 col-md-3 control-label">Role</label>
-                        <div class="col-sm-6 col-md-6">
-                            <form:select path="userRoles" size="1" multiple="false" items="${rolesMap}" cssClass="form-control"/>
-                            <form:errors cssClass="errorMessage" path="userRoles"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="row">
                         <div class="col-sm-offset-5 col-sm-2">
                             <button class="btn btn-lg btn-primary center-block btn-block" id="submit" type="submit">Sign up</button>
                         </div>

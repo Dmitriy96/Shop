@@ -6,16 +6,16 @@ import by.bsuir.shop.model.User;
 import by.bsuir.shop.service.LaptopService;
 import by.bsuir.shop.service.OrderService;
 import by.bsuir.shop.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +23,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+    private static Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     UserService userService;
     @Autowired
@@ -46,58 +47,61 @@ public class UserController {
         String username = principal.getName();
         User user = userService.getUserByUsername(username);
         List<Laptop> laptops = user.getLaptopList();
+        List<Laptop> removeLaptopList = new ArrayList<Laptop>();
+        for (Laptop laptop : laptops) {
+            if (laptop.isAvailable())
+                removeLaptopList.add(laptop);
+        }
+        laptops.removeAll(removeLaptopList);
         model.addAttribute("laptops", laptops);
         return "basket";
     }
 
     @RequestMapping(value="/basket", method=RequestMethod.POST)
-    public String makePurchase(@ModelAttribute("laptops") List<Laptop> laptops, Model model, Principal principal) {
+    public String makePurchase(@RequestParam("basketLaptopIds") String basketLaptopIds, Model model, Principal principal) {
+        logger.debug("======================makePurchase: {}", basketLaptopIds);
         if (principal == null) return "redirect:/login";
         String username = principal.getName();
         User user = userService.getUserByUsername(username);
-        List<Laptop> unavailableLaptops = new ArrayList<Laptop>();
-        for (Laptop laptop : laptops) {
-            if (laptop.getInStock().isAvailable()) {
-                laptop.getInStock().setAvailable(false);
-            }
-            else {
-                unavailableLaptops.add(laptop);
-                laptops.remove(laptop);
-            }
+        List<Laptop> orderedLaptops = new ArrayList<Laptop>();
+        basketLaptopIds = basketLaptopIds.substring(1);
+        for (String laptopId : basketLaptopIds.split(" ")) {
+            Laptop laptop = laptopService.getLaptop(Long.parseLong(laptopId));
+            orderedLaptops.add(laptop);
         }
-        if (!laptops.isEmpty()) {
-            PlacedOrder placedOrder = new PlacedOrder();
-            placedOrder.setOrderingDate(new Date());
-            placedOrder.setLaptopList(laptops);
-            user.getPlacedOrders().add(placedOrder);
-        }
-        userService.saveUser(user);
-        if (!unavailableLaptops.isEmpty()) {
-            model.addAttribute("laptops", unavailableLaptops);
-            model.addAttribute("message", "This laptops were bought.");
-        }
-        return "basket";
+        PlacedOrder placedOrder = new PlacedOrder();
+        placedOrder.setOrderingDate(new Date());
+        placedOrder.setLaptopList(orderedLaptops);
+        placedOrder.setUser(user);
+        List<PlacedOrder> placedOrders = new ArrayList<PlacedOrder>();
+        placedOrders.add(placedOrder);
+        user.setPlacedOrders(placedOrders);
+        userService.updateUser(user);
+        return "redirect:/user/orders";
     }
 
-    @RequestMapping(value="/basket/{id}", method=RequestMethod.GET)
+
+    @RequestMapping(value="/basket/add/{id}", method=RequestMethod.POST)
     public String addLaptopToBasket(@PathVariable Long id, Principal principal, Model model) {
+        logger.debug("addLaptopToBasket: id: {}", id);
         if (principal == null) return "redirect:/login";
         String username = principal.getName();
         User user = userService.getUserByUsername(username);
         Laptop laptop = laptopService.getLaptop(id);
+        laptop.setAvailable(false);
         user.getLaptopList().add(laptop);
-        userService.saveUser(user);
-        return "redirect:basket";
+        userService.updateUser(user);
+        return "redirect:/user/basket";
     }
 
-    @RequestMapping(value="/basket/{id}", method=RequestMethod.POST)
+    @RequestMapping(value="/basket/remove/{id}", method=RequestMethod.POST)
     public String deleteLaptopFromBasket(@PathVariable Long id, Principal principal, Model model) {
         if (principal == null) return "redirect:/login";
         String username = principal.getName();
         User user = userService.getUserByUsername(username);
         Laptop laptop = laptopService.getLaptop(id);
-        user.getLaptopList().remove(laptop);
-        userService.saveUser(user);
-        return "redirect:basket";
+        laptop.setAvailable(true);
+        laptopService.updateLaptop(laptop);
+        return "redirect:/user/basket";
     }
 }

@@ -31,7 +31,7 @@
                                 onerror="this.src='${pageContext.request.contextPath}/resources/images/laptops/default_laptop.jpg'" sizes=""/>
                         </div>
                         <div class="caption">
-                            <h4 class="pull-right">${laptop.inStock.cost} $</h4>
+                            <h4 class="pull-right">${laptop.cost} $</h4>
                             <h4><a href="${pageContext.request.contextPath}/laptop/${laptop.idLaptop}">${laptop.brandName} ${laptop.series} ${laptop.modelNumber}</a>
                             </h4>
                             <p><strong>OS:</strong> ${laptop.operatingSystem}, <strong>Hard Drive:</strong> ${laptop.hardDriveCapacity} GB, <strong>Memory size:</strong> ${laptop.memorySize} MB, <strong>Processor count:</strong> ${laptop.processorCount}</p>
@@ -53,8 +53,6 @@
         <script type="text/javascript" src="${jquery}"></script>
         <c:url value="/resources/js/bootstrap.min.js" var="bootstrapJs"/>
         <script type="text/javascript" src="${bootstrapJs}"></script>
-        <%--<c:url value="/resources/js/pagination.js" var="pagination"/>
-        <script type="text/javascript" src="${pagination}"></script>--%>
         <c:url value="/resources/js/loadingLaptops.js" var="loadingLaptops"/>
         <script type="text/javascript" src="${loadingLaptops}"></script>
 
