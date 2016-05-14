@@ -1,8 +1,6 @@
 package by.bsuir.shop.dao;
 
-import by.bsuir.shop.model.PlacedOrder;
-import by.bsuir.shop.model.Role;
-import by.bsuir.shop.model.User;
+import by.bsuir.shop.model.*;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -13,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -37,6 +36,16 @@ public class UserDaoImpl implements UserDao {
                 Hibernate.initialize(placedOrder.getLaptopList());
             }
         }
+        List<Laptop> basketLaptops = new ArrayList<Laptop>();
+        for (Laptop laptop : user.getLaptopList()) {
+            StringBuilder sb2 = new StringBuilder("SELECT pol FROM PlacedOrderLaptop pol WHERE pol.laptopList_idLaptop = :pol");
+            Query query2 = session.createQuery(sb2.toString());
+            query2.setParameter("pol", laptop.getIdLaptop());
+            List<PlacedOrderLaptop> placedOrderLaptops = query2.list();
+            if (placedOrderLaptops == null || placedOrderLaptops.size() == 0)
+                basketLaptops.add(laptop);
+        }
+        user.setLaptopList(basketLaptops);
         session.close();
         return user;
 	}

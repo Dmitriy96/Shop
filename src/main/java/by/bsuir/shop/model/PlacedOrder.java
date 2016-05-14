@@ -21,8 +21,12 @@ public class PlacedOrder {
     @Column
     private Date orderingDate;
 
-    @NotEmpty
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="PlacedOrder_Laptop",
+            joinColumns = @JoinColumn( name="laptopList_idLaptop"),
+            inverseJoinColumns = @JoinColumn( name="PlacedOrder_idOrder")
+    )
     private List<Laptop> laptopList;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
@@ -80,7 +84,6 @@ public class PlacedOrder {
     public int hashCode() {
         int result = idOrder;
         result = 31 * result + orderingDate.hashCode();
-        result = 31 * result + laptopList.hashCode();
         return result;
     }
 

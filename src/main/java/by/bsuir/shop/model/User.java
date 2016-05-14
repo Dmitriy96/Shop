@@ -148,7 +148,6 @@ public class User
                 "idUser=" + idUser +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", placedOrders=" + placedOrders +
                 ", laptopList=" + laptopList +
                 ", email='" + email + '\'' +
                 ", available=" + available +

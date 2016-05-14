@@ -38,14 +38,14 @@ public class MainController {
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public String defaultPage(@RequestParam(value = "page", required = false) Integer page, Model model) {
         logger.debug("Get defaultPage");
-        List<Laptop> laptopList = null;
-        if (page == null) {
+        List<Laptop> laptopList = laptopService.getAllLaptops();
+        /*if (page == null) {
             laptopList = laptopService.getLaptops(0);
             model.addAttribute("currentPageNumber", 1);
         } else {
             laptopList = laptopService.getLaptops(page - 1);
             model.addAttribute("currentPageNumber", page);
-        }
+        }*/
         int pagesNumber = laptopService.getLaptopCount() / LAPTOPS_PER_PAGE;
         model.addAttribute("pagesNumber", pagesNumber);
         model.addAttribute("laptops", laptopList);

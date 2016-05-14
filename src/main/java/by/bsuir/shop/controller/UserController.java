@@ -36,8 +36,12 @@ public class UserController {
         if (principal == null) return "redirect:/login";
         String username = principal.getName();
         User user = userService.getUserByUsername(username);
+        List<PlacedOrder> placedOrders = orderService.getOrders(user);
+        for (PlacedOrder placedOrder : user.getPlacedOrders()) {
+            logger.debug("listOrders: {}", Arrays.toString(placedOrder.getLaptopList().toArray()));
+        }
         model.addAttribute("user", user);
-        model.addAttribute("placedOrderList", user.getPlacedOrders());
+        model.addAttribute("placedOrderList", placedOrders);
         return "orders/list";
     }
 
@@ -66,17 +70,26 @@ public class UserController {
         List<Laptop> orderedLaptops = new ArrayList<Laptop>();
         basketLaptopIds = basketLaptopIds.substring(1);
         for (String laptopId : basketLaptopIds.split(" ")) {
+            logger.debug("======================makePurchase: before loaded laptop - {}", laptopId);
             Laptop laptop = laptopService.getLaptop(Long.parseLong(laptopId));
             orderedLaptops.add(laptop);
+            logger.debug("======================makePurchase: loaded laptop - {}", laptop);
         }
+        logger.debug("======================makePurchase: size - {}", orderedLaptops != null ? orderedLaptops.size() : "null");
+        logger.debug("======================makePurchase: id - {}", orderedLaptops.get(0) != null ? orderedLaptops.get(0).getIdLaptop() : "null");
         PlacedOrder placedOrder = new PlacedOrder();
         placedOrder.setOrderingDate(new Date());
-        placedOrder.setLaptopList(orderedLaptops);
         placedOrder.setUser(user);
-        List<PlacedOrder> placedOrders = new ArrayList<PlacedOrder>();
-        placedOrders.add(placedOrder);
-        user.setPlacedOrders(placedOrders);
-        userService.updateUser(user);
+        Integer id = orderService.saveOrder(placedOrder);
+        logger.debug("======================makePurchase: placed order id - {}", placedOrder.getIdOrder());
+        placedOrder.setLaptopList(orderedLaptops);
+        orderService.updateOrder(placedOrder);
+        //List<PlacedOrder> placedOrders = new ArrayList<PlacedOrder>();
+        //placedOrders.add(placedOrder);
+        user.getPlacedOrders().add(placedOrder);
+        logger.debug("======================makePurchase: total orders - {}", user.getPlacedOrders().size());
+        //user.setPlacedOrders(placedOrders);
+        //userService.updateUser(user);
         return "redirect:/user/orders";
     }
 

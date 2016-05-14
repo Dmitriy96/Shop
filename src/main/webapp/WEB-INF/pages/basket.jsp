@@ -36,14 +36,16 @@
                                 <c:forEach items="${laptops}" var="laptop">
                                     <tr>
                                         <td>
-                                            <div class="cell-text-alignment">${laptop.brandName} ${laptop.series} ${laptop.modelNumber}</div>
+                                            <div class="cell-text-alignment">
+                                                 ${laptop.brandName} ${laptop.series} ${laptop.modelNumber}
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="cell-text-alignment">${laptop.cost} $</div>
                                         </td>
                                         <td>
                                             <div class="cell-alignment">
-                                                <button type="button" name="removeLaptop" class="btn btn-info" data-url="${pageContext.request.contextPath}/user/basket/remove/${laptop.idLaptop}" title="Remove">
+                                                <button type="button" name="removeLaptop" class="btn btn-danger" data-url="${pageContext.request.contextPath}/user/basket/remove/${laptop.idLaptop}" title="Remove">
                                                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                                 </button>
                                             </div>
@@ -60,9 +62,6 @@
                         </c:if>
                     </div>
                 </div>
-                <%--<button type="button" id="purchaseButton" class="btn btn-info text-center pull-right" data-url="${pageContext.request.contextPath}/user/basket?${_csrf.parameterName}=${_csrf.token}" title="Purchase">
-                    Purchase
-                </button>--%>
             </form:form>
             <c:url value='/user/basket?${_csrf.parameterName}=${_csrf.token}' var="basketUrl"/>
             <form:form id="purchaseForm" action="${basketUrl}" method="post">
@@ -82,10 +81,6 @@
 
     </div>
 
-    <%--<c:url value="/resources/js/jquery-1.11.3.min.js" var="jquery"/>
-    <script type="text/javascript" src="${jquery}"></script>
-    <c:url value="/resources/js/bootstrap.min.js" var="bootstrapJs"/>
-    <script type="text/javascript" src="${bootstrapJs}"></script>--%>
     <c:url value="/resources/js/basket.js" var="basket"/>
     <script type="text/javascript" src="${basket}"></script>
 

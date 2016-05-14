@@ -15,7 +15,7 @@ import java.util.List;
 public class LaptopDaoImpl implements LaptopDao {
     @Autowired
     private SessionFactory sessionFactory;
-    private final Integer LAPTOPS_PER_PAGE = 30;
+    private final Integer LAPTOPS_PER_PAGE = 12;
 
     @Override
     public List<Laptop> getAllLaptops() {
@@ -71,7 +71,7 @@ public class LaptopDaoImpl implements LaptopDao {
         Session session = getSessionFactory().openSession();
         Laptop laptop = (Laptop)getSessionFactory().openSession().get(Laptop.class, id);
         session.close();
-        return laptop.isAvailable() ? laptop : null;
+        return laptop;
     }
 
     @Override

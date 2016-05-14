@@ -20,4 +20,14 @@ public class OrderServiceImpl implements OrderService {
     public List<PlacedOrder> getOrders(User user) {
         return orderDao.getOrders(user);
     }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Integer saveOrder(PlacedOrder placedOrder) {
+        return orderDao.saveOrder(placedOrder);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void updateOrder(PlacedOrder placedOrder) {
+        orderDao.updateOrder(placedOrder);
+    }
 }

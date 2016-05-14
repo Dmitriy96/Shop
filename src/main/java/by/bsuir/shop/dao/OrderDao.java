@@ -7,5 +7,7 @@ import java.util.List;
 
 
 public interface OrderDao {
-    public List<PlacedOrder> getOrders(User user);
+    List<PlacedOrder> getOrders(User user);
+    Integer saveOrder(PlacedOrder placedOrder);
+    void updateOrder(PlacedOrder placedOrder);
 }

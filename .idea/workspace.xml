@@ -2,64 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3712d01-2363-4f9b-bc78-821552d480f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Role.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/basket.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/LaptopInStock.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/model/LaptopInStock.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/model/LaptopInStock.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/SignupController.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/SignupController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrderLaptop.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/MainController.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/MainController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/UserController.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/controller/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/LaptopDaoImpl.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/LaptopDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/UserDaoImpl.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/model/Laptop.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/model/Laptop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/OrderDao.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/OrderDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/OrderDaoImpl.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/dao/OrderDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/model/PlacedOrder.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/model/PlacedOrder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/model/User.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/MyUserDetailsService.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/MyUserDetailsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/UserService.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/AdminController.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/AdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/SignupController.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/SignupController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/OrderService.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/OrderService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/OrderServiceImpl.class" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/classes/by/bsuir/shop/service/OrderServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/MainController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/controller/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/LaptopDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/LaptopDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/UserDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/model/Laptop.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/model/Laptop.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/OrderDao.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/OrderDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/OrderDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/dao/OrderDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/model/PlacedOrder.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/model/PlacedOrder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/model/User.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/MyUserDetailsService.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/MyUserDetailsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/OrderService.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/OrderService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/OrderServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/by/bsuir/shop/service/OrderServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/SignupController.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/SignupController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/MainController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDao.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDao.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Laptop.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Laptop.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrder.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/LaptopService.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/LaptopService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/LaptopServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/LaptopServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/MyUserDetailsService.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/MyUserDetailsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addingProduct.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addingProduct.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderService.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/description.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/description.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/orders/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/orders/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/admin/addingProduct.jsp" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/admin/addingProduct.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/basket.jsp" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/basket.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/description.jsp" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/description.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/home.jsp" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/home.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/orders/list.jsp" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/orders/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/registration.jsp" afterPath="$PROJECT_DIR$/target/Shop/WEB-INF/pages/registration.jsp" />
     </list>
     <ignored path="OnlineShop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,25 +58,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="34" column="103" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="75" column="69" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+            <state relative-caret-position="512">
+              <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
               <folding>
-                <element signature="e#1794#1802#0" expanded="true" />
-                <element signature="e#2550#2558#0" expanded="true" />
-                <element signature="e#3050#3063#0" expanded="true" />
+                <element signature="e#2030#2038#0" expanded="true" />
+                <element signature="e#2786#2794#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,9 +74,11 @@
       <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
-              <folding />
+            <state relative-caret-position="160">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding>
+                <element signature="e#1478#1486#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,28 +86,32 @@
       <file leaf-file-name="PlacedOrder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="180">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="description.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/description.jsp">
+      <file leaf-file-name="OrderDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="225">
+              <caret line="42" column="64" selection-start-line="40" selection-start-column="12" selection-end-line="42" selection-end-column="64" />
+              <folding>
+                <element signature="e#1271#1279#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/orders/list.jsp">
+      <file leaf-file-name="PlacedOrderLaptop.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrderLaptop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="62" column="54" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="54" />
+            <state relative-caret-position="135">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -167,14 +138,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/loadingLaptops.js" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/LaptopInStock.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addingProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Laptop.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/basket.js" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/MyUserDetailsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/SignupController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" />
@@ -186,14 +155,21 @@
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/LaptopServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/orders/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/description.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/orders/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrderLaptop.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -1230,12 +1206,12 @@
       <workItem from="1463141803944" duration="5074000" />
       <workItem from="1463150541028" duration="7582000" />
       <workItem from="1463159645783" duration="2170000" />
-      <workItem from="1463161860421" duration="9371000" />
+      <workItem from="1463161860421" duration="18581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28992000" />
+    <option name="totallyTimeSpent" value="38202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
@@ -1251,7 +1227,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34358975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34358975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1293,36 +1269,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Laptop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3975">
-          <caret line="368" column="18" selection-start-line="368" selection-start-column="18" selection-end-line="368" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/loadingLaptops.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/pagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1463,26 +1409,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="29" column="81" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1501,17 +1431,6 @@
           <caret line="35" column="68" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
           <folding>
             <element signature="e#1341#1349#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="958">
-          <caret line="112" column="36" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
-          <folding>
-            <element signature="e#2827#2828#0" expanded="true" />
-            <element signature="e#2869#2870#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1570,16 +1489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#1201#1202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1588,19 +1497,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Laptop.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addingProduct.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2249">
-          <caret line="323" column="21" selection-start-line="323" selection-start-column="13" selection-end-line="323" selection-end-column="21" />
+        <state relative-caret-position="124">
+          <caret line="14" column="95" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/AdminController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+        <state relative-caret-position="293">
+          <caret line="34" column="103" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="103" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#1201#1202#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1615,21 +1534,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="e#1245#1253#0" expanded="true" />
-            <element signature="e#2208#2216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addingProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="14" column="95" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
+        <state relative-caret-position="285">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1642,63 +1550,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/orders/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="46" column="48" selection-start-line="44" selection-start-column="44" selection-end-line="46" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="75" column="69" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
+        <state relative-caret-position="264">
+          <caret line="47" column="111" selection-start-line="47" selection-start-column="111" selection-end-line="47" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/LaptopDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="91" column="24" selection-start-line="88" selection-start-column="8" selection-end-line="91" selection-end-column="24" />
           <folding>
-            <element signature="e#1794#1802#0" expanded="true" />
-            <element signature="e#2550#2558#0" expanded="true" />
-            <element signature="e#3050#3063#0" expanded="true" />
+            <element signature="e#1245#1253#0" expanded="true" />
+            <element signature="e#2208#2216#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
+        <state relative-caret-position="1665">
+          <caret line="149" column="50" selection-start-line="149" selection-start-column="50" selection-end-line="149" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/Laptop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="34" column="103" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/orders/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="62" column="54" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="54" />
+        <state relative-caret-position="-810">
+          <caret line="16" column="11" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/description.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
+        <state relative-caret-position="-1560">
           <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/service/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#1003#1004#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrderLaptop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/model/PlacedOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/OrderDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="42" column="64" selection-start-line="40" selection-start-column="12" selection-end-line="42" selection-end-column="64" />
+          <folding>
+            <element signature="e#1271#1279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/dao/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#1478#1486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/bsuir/shop/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+          <folding>
+            <element signature="e#2030#2038#0" expanded="true" />
+            <element signature="e#2786#2794#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

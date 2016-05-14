@@ -16,7 +16,6 @@
                 <h2>Orders of ${user.username}</h2>
                 <div class="table-responsive">
                 <c:if test="${not empty placedOrderList}">
-                    <c:out value="${placedOrderList.size()}"/>
                     <table id="ordersTable" class="table table-hover">
                         <thead>
                             <tr>

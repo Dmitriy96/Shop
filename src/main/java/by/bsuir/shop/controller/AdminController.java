@@ -55,14 +55,11 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/product/delete/{id}", method = RequestMethod.POST)
-    public String adminProductDelete(@PathVariable Long id, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            return "admin/deleteProduct";
-        }
+    public String adminProductDelete(@PathVariable Long id, Model model) {
         Laptop laptop = laptopService.getLaptop(id);
         laptop.setAvailable(false);
         laptopService.updateLaptop(laptop);
-        return "redirect:/admin/product/delete";
+        return "redirect:/home";
     }
 
 
